@@ -1,0 +1,121 @@
+/* Estilos básicos para organizar el contenido */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño total del elemento */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.big-img {
+    width: 50%; /* Ajusta el tamaño de la imagen en pantallas grandes */
+}
+
+.big-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-sections {
+    padding: 20px;
+    width: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-sections h1, .form-sections h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-sections input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-sections button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Añadido para una transición suave */
+}
+
+.form-sections button:hover {
+    background-color:#0056b3;
+}
+
+.toggle-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.toggle-section a {
+    color: #4CAF50;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toggle-section a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .big-img {
+        order: -1; /* Mueve la imagen hacia arriba */
+        width: 100%;
+        height: auto;
+    }
+
+    .big-img img {
+        height: 200px; /* Ajusta la altura de la imagen */
+        object-fit: cover;
+    }
+
+    .form-sections {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-img {
+        display: none; /* Oculta la imagen en pantallas muy pequeñas */
+    }
+
+    .form-container {
+        width: 100%;
+        box-shadow: none; /* Quita la sombra para simplificar el diseño */
+    }
+}

@@ -1,0 +1,212 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+/*Cambios para el hoover de boostrap */
+.navbar-dark .navbar-nav .nav-link {
+    color: white;
+    transition: color 0.3s ease;
+}
+/*Cambios para el hoover de boostrap */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: yellow;
+}
+
+/*Estilo de main*/
+.hero {
+    width: 100%;
+    height: 100vh; /* Altura del 100% del viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://casa.misiones.gob.ar/wp-content/uploads/2020/11/1540.jpg');
+    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+/*estilo del titulo y p dentro del hero*/
+.hero h1,
+.hero p {
+  color: white; /* Cambia el color del texto a blanco */
+}
+.hero h1{
+    font-size: 6em;
+}
+.hero p{
+    font-size: 2em;
+}
+
+.hero button {
+    width: 9em;
+    height: 3em;
+    border-radius: 10px;
+    color: white; /* Color del texto por defecto */
+    background-color: red; /* Color de fondo del botón */
+    border: none; /* Opcional: elimina el borde por defecto del botón */
+    cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+    transition: color 0.3s ease; /* Agrega una transición suave al cambio de color */
+}
+
+.hero button:hover {
+    color: yellow; /* Color del texto al pasar el cursor sobre el botón */
+}
+/*Estilo de la presentación*/
+
+#presentacion{
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.texto-presentacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.texto-presentacion h2 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+    position: relative; /* Posiciona el <div> relativamente al <h2> */
+}
+
+.linea-roja {
+    width: 50px; /* Ancho de la línea */
+    height: 5px; /* Altura de la línea */
+    background-color: red; /* Color de la línea */
+    margin: 0 auto 1em auto; /* Centra la línea y da margen en la parte inferior */
+}
+.texto-presentacion p{
+    font-size: 1.5em;
+}
+.unexpected-7 {
+    padding: 8px;
+    border: 3px solid transparent; /* Ajuste para evitar que se vea un borde no deseado */
+    outline: 3px solid;
+    outline-offset: -3px;
+    transition: 0s;
+  }
+  
+  .unexpected-7:hover {
+    outline-offset: 100px;
+    outline-color: transparent;
+    transition: 0.5s;
+  }
+  
+  /* Estilos de los cuadros con texto */
+  .cuadros-texto {
+      margin-top: 2.5em;
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+  }
+  
+  .cuadros-texto div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: solid rgb(231, 221, 221) 1px;
+      flex-wrap: wrap;
+      margin: 0 10px;
+  }
+  
+  .cuadros-texto img {
+      margin-top: 1em;
+  }
+  
+  .cuadros-texto h2 {
+      color: red;
+  }
+  
+  .cuadros-texto p {
+      font-size: 1em;
+      margin: 0 10px 20px 10px;
+  }
+  
+/*Estilo de imagenes con texto y imagenes*/
+
+
+.imagenes-hover {
+    margin-top: 6em; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.imagenes-hover div {
+    position: relative; 
+    width: 475px; 
+    height: 400px; 
+}
+
+.imagenes-hover img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+}
+
+.imagenes-hover p {
+    position: absolute; 
+    bottom: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white; 
+    background-color: rgba(178, 95, 95, 0.5); 
+    padding: 10px; 
+    border-radius: 5px; 
+    text-align: center; 
+    width: calc(100% - 20px); 
+    margin: 0; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.imagenes-hover p:hover {
+    background-color: black; 
+    color: yellow; 
+}
+
+
+/*Testimonals*/
+
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+    flex-wrap: wrap;
+}
+
+.fotos-testimonial {
+    margin-top: 2em;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%; 
+    flex-wrap: wrap; 
+}
+
+.fotos-testimonial div {
+    margin: 0 1em; 
+}
+
+
+
+.fotos-testimonial h4 {
+    margin-top: 0.5em; 
+    font-size: 1.2em; 
+}
+.fotos-testimonial p{
+    text-align: left;
+}
+/*Estilo de footer*/
+

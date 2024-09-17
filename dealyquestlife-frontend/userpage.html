@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style/user.css">
+</head>
+<body>
+    <!-- Profile Section -->
+    <section class="bg-light py-3 py-md-5 py-xl-8">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+                    <h2 class="mb-4 display-5 text-center">Daily Quest Life</h2>
+                    <p class="text-secondary text-center lead fs-4 mb-5">¡Welcome! <span id="userName"></span></p>
+                    <p class="text-secondary text-center lead fs-4 mb-5">Enjoy your journy</p>
+                    <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+                </div>
+            </div>
+<!-- Div del perfil -->
+<section class="row gy-4 gy-lg-0">
+    <div class="col-12 col-lg-4 col-xl-3">
+        <div class="row gy-4">
+            <div class="col-12">
+                <div class="card widget-card border-light shadow-sm">
+                    <div class="card-header text-bg-primary text-center"><span class="name"></span></div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <img id="profileImage" class="img-fluid rounded-circle" alt="Profile Image">
+                        </div>
+                        <h5 class="text-center mb-1 name"></h5>
+                        <p class="text-center text-secondary mb-4 nivel">Level: <span></span></p>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <h6 class="m-0">Followers</h6>
+                                <span id="followers"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <h6 class="m-0">Following</h6>
+                                <span id="following">0</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <h6 class="m-0">Friends</h6>
+                                <span id="friends">0</span>
+                            </li>
+                        </ul>
+                        <div class="d-grid m-0">
+                            <button class="btn btn-outline-danger" type="button" id="logoutButton">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <div class="card widget-card border-light shadow-sm">
+                    <div class="card-header text-bg-primary">Social Accounts</div>
+                    <div class="card-body">
+                        <a href="https://www.youtube.com/" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                        
+                        <a href="https://es-es.facebook.com/" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/randy-plua-536527184/" class="d-inline-block bg-dark link-light lh-1 p-2 rounded">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card widget-card border-light shadow-sm">
+                    <div class="card-body text-center">
+                        <button class="btn btn-danger" type="button" id="deleteAccountButton">Eliminar cuenta</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-12 col-lg-8 col-xl-9">
+        <div class="card widget-card border-light shadow-sm">
+            <div class="card-body p-4">
+                <ul class="nav nav-tabs" id="profileTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Misiones</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane-amigos" type="button" role="tab" aria-controls="profile-tab-pane-amigos" aria-selected="false">Network</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tusobjectos-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane-tus-objectos" type="button" role="tab" aria-controls="profile-tab-pane-tus-objectos" aria-selected="false">Tus Objectos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane-objectos" type="button" role="tab" aria-controls="profile-tab-pane-objectos" aria-selected="false">Todos los Objectos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password-tab-pane" type="button" role="tab" aria-controls="password-tab-pane" aria-selected="false">Profile</button>
+                    </li>
+                </ul>
+
+                <!-- Se cargan las Misiones -->
+                <div class="tab-content pt-4" id="profileTabContent">
+                    <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                        <h5 class="mb-3">Tu Misiones</h5>
+                        <div id="mision" class="mb-3"></div>
+                        <button class="btn btn-primary" type="button" id="generateMissions">Generar Misiones</button>
+                    </div>
+
+                    <!-- Usuarios que se cargan -->
+                    <div class="tab-pane fade" id="profile-tab-pane-amigos" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <h5 class="mb-3">Personas</h5>
+                        <div id="amigos" class="row">
+                            <!-- Aquí se cargará la lista de amigos -->
+                        </div>
+                    </div>
+                    <!-- Contenido para "Tus Objectos" (Nueva pestaña) -->
+                    <div class="tab-pane fade" id="profile-tab-pane-tus-objectos" role="tabpanel" aria-labelledby="tusobjectos-tab" tabindex="0">
+                        <h5 class="mb-3">Tus Objectos</h5>
+                        <div id="tus-objectos" class="row">
+                            <!-- Aquí se cargarán tus objetos -->
+                        </div>
+                    </div>
+                    <!-- Objetos que se cargan -->
+                    <div class="tab-pane fade" id="profile-tab-pane-objectos" role="tabpanel" aria-labelledby="email-tab" tabindex="0">
+                        <h5 class="mb-3">Desbloquealos todos</h5>
+                        <div id="objecto" class="row">
+                            <!-- Aquí se cargará la lista de objetos -->
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="password-tab-pane" role="tabpanel" aria-labelledby="password-tab" tabindex="0">
+                        <form id="userUpdateForm">
+                            <div class="row gy-3 gy-xxl-4">
+                                <div class="col-12">
+                                    <label for="UserName" class="form-label">Current UserName</label>
+                                    <input type="text" class="form-control" id="UserName">
+                                </div>
+                                <div class="col-12">
+                                    <label for="newUserName" class="form-label">New UserName</label>
+                                    <input type="text" class="form-control" id="newUserName">
+                                </div>
+                                <div class="col-12">
+                                    <label for="currentEmail" class="form-label">New Email</label>
+                                    <input type="email" class="form-control" id="newEmail">
+                                </div>
+                                <div class="col-12">
+                                    <label for="currentPassword" class="form-label">Current Password</label>
+                                    <input type="password" class="form-control" id="currentPassword">
+                                </div>
+                                <div class="col-12">
+                                    <label for="newPassword" class="form-label">New Password</label>
+                                    <input type="password" class="form-control" id="newPassword">
+                                </div>
+                                <div class="col-12">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/user.js"></script>
+</body>
+</html>
+
+</html>
